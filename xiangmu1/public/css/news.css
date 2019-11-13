@@ -1,0 +1,238 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+#news {
+  width: 100%;
+  height: 1800px;
+  margin: 0 auto;
+}
+.news_1 {
+  width: 100%;
+}
+.news_2 {
+  width: 1200px;
+  height: 85px;
+  position: relative;
+}
+.news_2 p {
+  width: 755px;
+  height: 50px;
+  text-decoration: none;
+  position: absolute;
+  left: 251px;
+  top: 9px;
+  font-size: 16px;
+  color: #808080;
+  line-height: 58px;
+  padding-top: 9px;
+}
+
+.news_2 p b {
+  font-style: normal;
+  font-size: 16px;
+  color: #808080;
+  font-weight: normal;
+}
+
+.news_2 p a {
+  text-decoration: none;
+  color: #808080;
+}
+
+.news_2 span {
+  position: absolute;
+  right: -250px;
+  top: 20px;
+}
+.news_2 span input {
+  width: 370px;
+  height: 45px;
+
+  position: absolute;
+  right: 71px;
+  top: 1px;
+  background: #e2e2e3;
+  font-size: 14px;
+  color: #a0a0a1;
+  padding: 0 30px;
+}
+.news_3 {
+  width: 1200px;
+  height: 1185px;
+  margin: 0 auto;
+  color: #666;
+  display: flex;
+  justify-content: space-between;
+}
+.news_4 {
+  width: 1200px;
+  height: 46px;
+  margin: 0 auto;
+  font-size: 14px;
+  color: #666;
+  line-height: 47px;
+  border-bottom: 1px dashed #dcdcdc;
+}
+.news_4 b {
+  border-left: 10px solid #2a2927;
+  font-weight: normal;
+  padding-left: 8px;
+}
+.news_4 a {
+  text-decoration: none;
+  color: #666;
+}
+.news_5 {
+  width: 240px;
+  height: 480px;
+}
+.news_7 {
+  width: 240px;
+  height: 290px;
+}
+.news_8 {
+  width: 240px;
+  height: 80px;
+  background: #ff9000;
+}
+.news_8 h3 {
+  height: 75px;
+  font-size: 24px;
+  font-weight: normal;
+  line-height: 75px;
+  color: #fff;
+  border-bottom: 1px solid #fff;
+  text-align: center;
+}
+.news_9 {
+  width: 240px;
+  height: 160px;
+}
+.news_10 {
+  width: 240px;
+  height: 50px;
+  margin-bottom: 2px;
+  background: url(../1/p14-icon2.png) no-repeat right center #ff9000;
+}
+.news_10 h3 {
+  height: 50px;
+  line-height: 50px;
+}
+.news_10 h3 a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #fff;
+  font-weight: normal;
+  margin-right: 40px;
+  margin-left: 38px;
+}
+.news_11 {
+  width: 240px;
+  height: 50px;
+  margin-bottom: 1px;
+  font-size: 16px;
+  line-height: 50px;
+  background: #ececec;
+}
+.news_11 a {
+  text-decoration: none;
+  color: #666;
+  padding-left: 54px;
+  padding-right: 40px;
+  margin-bottom: 1px;
+}
+.news_12 h3 {
+  height: 50px;
+  line-height: 50px;
+  background: url("../1/p14-icon2.png") no-repeat right center #333;
+  margin-bottom: 2px;
+}
+.news_12 h3 a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: normal;
+  padding-left: 40px;
+}
+.news_13 {
+  width: 240px;
+  height: 140px;
+  background: url(../1/contact-z1.jpg) no-repeat;
+  color: #333;
+}
+.news_13 p {
+  font-size: 20px;
+  height: 30px;
+  line-height: 30px;
+  padding: 37px 0 0 95px;
+  background: url(../1/contact-z1_tel.png) no-repeat 74px 44px;
+}
+.news_13 span {
+  display: block;
+  height: 30px;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 30px;
+  padding-left: 73px;
+}
+.news_6 {
+  width: 930px;
+  height: 1118px;
+}
+.news_6 > div {
+  height: 190px;
+  border: 1px solid #dedede;
+  width: 100%;
+  padding: 22px;
+  margin-bottom: 15px;
+  display: inline-block;
+}
+.news_6 > div a img {
+  width: 44.4%;
+  float: left;
+  margin-left: 22px;
+  margin-right: 2.3%;
+}
+.news_6 > div h4 {
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 40px;
+  margin-bottom: 5px;
+}
+.news_6 > div h4 a {
+  display: block;
+  color: #4b4a4a;
+  text-decoration: none;
+  outline: none;
+}
+.news_6 > div > .case_16 {
+  max-height: 72px;
+  font-size: 14px;
+  line-height: 24px;
+  color: #797979;
+  margin-bottom: 28px;
+  padding-right: 40px;
+}
+.news_6 > div:hover {
+  border: 1px solid #ff9000;
+}
+.news_6 > div:hover .case_17 {
+  background-color: #ff9000;
+}
+.news_6 > div > .case_17 {
+  float: right;
+  width: 90px;
+  height: 30px;
+  display: inline-block;
+  border: 1px solid #aaa;
+  font-size: 16px;
+  line-height: 30px;
+  text-align: center;
+  margin-right: 40px;
+  margin-top: 20px;
+  background: #b6b6b6;
+}
+.news_6 > div > .case_17 a {
+  text-decoration: none;
+  color: #fff;
+}

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      table {
+        width: 600px;
+        text-align: center;
+        border-collapse: collapse;
+      }
+      td,
+      th {
+        border: 1px solid black;
+      }
+      td[colspan="4"] {
+        text-align: right;
+      }
+    </style>
+  </head>
+  <body>
+    <table id="data">
+      <thead>
+        <tr>
+          <th><input type="checkbox" /></th>
+          <th>商品名称</th>
+          <th>单价</th>
+          <th>数量</th>
+          <th>小计</th>
+          <th>删除</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="checkbox" /></td>
+          <td>iPhone6</td>
+          <td>¥4488.00</td>
+          <td>
+            <button>-</button>
+            <span>1</span>
+            <button>+</button>
+          </td>
+          <td>¥4488.00</td>
+          <td>x</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" /></td>
+          <td>iPhone6 plus</td>
+          <td>¥5288.00</td>
+          <td>
+            <button>-</button>
+            <span>1</span>
+            <button>+</button>
+          </td>
+          <td>¥5288.00</td>
+          <td>x</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" /></td>
+          <td>iPad Air 2</td>
+          <td>¥4288.00</td>
+          <td>
+            <button>-</button>
+            <span>1</span>
+            <button>+</button>
+          </td>
+          <td>¥4288.00</td>
+          <td>x</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td></td>
+          <td colspan="4">Total:</td>
+          <td>¥14064.00</td>
+        </tr>
+      </tfoot>
+    </table>
+    <script>
+      //需求: 点按钮，改数量，同时改小计，同时改总计
+      //复习: 单击事件
+      //什么是事件: 浏览器自动触发的或用户手动触发的页面内容状态的改变
+      //什么是事件处理函数: 我们定义的函数，希望在事件发生时自动执行
+      //什么是事件属性: 每个元素都有一批特殊属性，名称以on开头，后跟事件名，比如: onclick  onchange  onmousedown...
+      //当这个元素上发生某个事件时，浏览器会自动找到这个元素上对应的onxxx事件属性。如果该属性上，提前赋值了一个事件处理函数，就自动调用该函数。
+      //如何在事件发生时，可以触发自定义的操作: ——事件绑定
+      //答: 在事件发生前就提前将自定义的事件处理函数赋值到元素的对应事件属性上保存起来
+
+      //事件处理函数中的this:
+      //因为事件发生时，会自动调用事件处理函数，比如当单击btn1按钮时，会自动执行:
+      //  btn1.onclick();
+      //  所以onclick中的this->.前的btn1
+      //查找id为data的table元素
+      var table = document.getElementById("data");
+      // console.log(table);
+      var btns = table.getElementsByTagName("button");
+      console.log(btns);
+      for (var btn of btns) {
+        btn.onclick = function() {
+          var td = this.parentNode;
+          var span = td.children[1];
+          var n = parseInt(span.innerHTML);
+          span.style.backgroundColor = "yellow";
+          var n = parseInt(span.innerHTML);
+          if (this.innerHTML == "+") {
+            n++;
+          } else if (n > 1) {
+            n--;
+          }
+          span.innerHTML = n;
+
+          var price = parseFloat(td.previousElementSibling.innerHTML.slice(1));
+          var subtotal = price * n;
+          td.nextElementSibling.innerHTML = "￥" + subtotal.toFixed(2);
+          var tds = table.querySelectorAll("tbody>tr>td:nth-child(5)");
+          console.log(tds);
+          var last_td = table.querySelector("tfoot>tr>td:last-child");
+          console.log(last_td);
+          var total = 0;
+          for (var td of tds) {
+            total += parseFloat(td.innerHTML.slice(1));
+          }
+          var chbs = document.querySelectorAll("tbody>tr>td:first-child>input");
+          var sum = 0;
+          for (var chb of chbs) {
+            var xj = parseFloat(
+              chb.parentNode.parentNode.children[4].innerHTML.slice(1)
+            );
+            console.log(xj);
+            if (chb.checked == true) {
+              sum += xj;
+            }
+          }
+          last_td.innerHTML = `￥${sum}元`;
+        };
+      }
+
+      var chbAll = document.querySelector("thead input");
+      console.log(chbAll);
+      chbAll.onclick = function() {
+        var total = 0;
+        var chbs = document.querySelectorAll("tbody>tr>td:first-child>input");
+        // console.log(chbs);
+        var tds = table.querySelectorAll("tbody>tr>td:nth-child(5)");
+        for (var td of tds) {
+          total += parseFloat(td.innerHTML.slice(1));
+        }
+        for (var chb of chbs) {
+          chb.checked = this.checked;
+        }
+        if (chbAll.checked == false) {
+          last_td = table.querySelector("tfoot>tr>td:last-child");
+          last_td.innerHTML = `￥0元`;
+        } else {
+          console.log(total);
+          last_td = table.querySelector("tfoot>tr>td:last-child");
+          last_td.innerHTML = `￥${total}元`;
+        }
+      };
+      var chbs = document.querySelectorAll("tbody>tr>td:first-child>input");
+      for (var chb of chbs) {
+        chb.onclick = function() {
+          var cnbAll = document.querySelector("thead input");
+          if (this.checked == false) {
+            chbAll.checked = false;
+          } else {
+            var unchecked = document.querySelector(
+              "tbody>tr>td:first-child>input:not(:checked)"
+            );
+            chbAll.checked = unchecked == null;
+          }
+          var sum = 0;
+          for (var chb of chbs) {
+            var xj = parseFloat(
+              chb.parentNode.parentNode.children[4].innerHTML.slice(1)
+            );
+            console.log(xj);
+            if (chb.checked == true) {
+              sum += xj;
+            }
+          }
+          last_td = table.querySelector("tfoot>tr>td:last-child");
+          last_td.innerHTML = `￥${sum}`;
+        };
+      }
+      var ss = table.querySelectorAll("tbody>tr>td:last-child");
+      // console.log(ss);
+      for (var s of ss) {
+        s.onclick = function() {
+          var tr = this.parentNode;
+
+          var tds = table.querySelectorAll("tbody>tr>td:nth-child(2)");
+          var name = tds.innerHTML;
+          console.log(name);
+          if (confirm(`是否继续删除 ${name} 吗?`)) {
+            table.deleteRow(tr.rowIndex);
+          }
+          // var sum = 0;
+          // var tds = table.querySelectorAll("tbody>tr>td:nth-child(5)");
+          // for (var td of tds) {
+          //   total += parseFloat(td.innerHTML.slice(1));
+          // }
+
+          // if (tr !== "") {
+          //   sum += xj;
+          // } else {
+          //   sum;
+          // }
+
+          // var price = parseFloat(td.previousElementSibling.innerHTML.slice(1));
+          // var subtotal = price * n;
+          // td.nextElementSibling.innerHTML = "￥" + subtotal.toFixed(2);
+          // var tds = table.querySelectorAll("tbody>tr>td:nth-child(5)");
+          // console.log(tds);
+          // var last_td = table.querySelector("tfoot>tr>td:last-child");
+          // // console.log(last_td);
+          // var total = 0;
+          // for (var td of tds) {
+          //   total -= parseFloat(td.innerHTML.slice(1));
+          // }
+          // last_td.innerHTML = `￥${total.toFixed(2)}`;
+        };
+      }
+    </script>
+  </body>
+</html>

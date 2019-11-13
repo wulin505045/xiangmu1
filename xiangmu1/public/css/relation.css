@@ -1,0 +1,161 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.relation {
+  width: 100%;
+  height: 85px;
+  position: relative;
+}
+.relation p {
+  width: 755px;
+  height: 50px;
+  text-decoration: none;
+  position: absolute;
+  left: 251px;
+  top: 9px;
+  font-size: 16px;
+  color: #808080;
+  line-height: 58px;
+  padding-top: 9px;
+}
+
+.relation p b {
+  font-style: normal;
+  font-size: 16px;
+  color: #808080;
+  font-weight: normal;
+}
+
+.relation p a {
+  text-decoration: none;
+  color: #808080;
+}
+
+.relation span {
+  position: absolute;
+  right: 300px;
+  top: 20px;
+}
+.relation span input {
+  width: 370px;
+  height: 45px;
+
+  position: absolute;
+  right: 71px;
+  top: 1px;
+  background: #e2e2e3;
+  font-size: 14px;
+  color: #a0a0a1;
+  padding: 0 30px;
+}
+#relation {
+  width: 1200px;
+  height: 905px;
+  margin: 0 auto;
+}
+.news_4 {
+  width: 1200px;
+  height: 46px;
+  margin: 0 auto;
+  font-size: 14px;
+  color: #666;
+  line-height: 47px;
+  border-bottom: 1px dashed #dcdcdc;
+}
+.news_4 b {
+  border-left: 10px solid #2a2927;
+  font-weight: normal;
+  padding-left: 8px;
+}
+.news_4 a {
+  text-decoration: none;
+  color: #666;
+}
+.relation_1 {
+  width: 1200px;
+  height: 55px;
+  margin: 20px auto;
+  background: #fff;
+}
+.relation_1 ul {
+  list-style: none;
+  display: flex;
+}
+.relation_1 ul li {
+  width: 199px;
+  height: 55px;
+  font-size: 18px;
+  line-height: 55px;
+  text-align: center;
+  border: 1px solid #fff;
+  color: #666;
+}
+.relation_1 ul li a {
+  text-decoration: none;
+  color: #666;
+}
+.relation_2 {
+  background: url(../1/551.png) no-repeat center -10px;
+  height: 50px;
+  margin: 20px 0;
+  text-align: center;
+  font-size: 32px;
+  line-height: 28px;
+  color: #666;
+}
+.relation_2 span {
+  color: #ff9000;
+}
+.relation_3 {
+  height: 250px;
+  border: 1px solid #999;
+  margin-top: 80px;
+  margin-bottom: 41px;
+  display: flex;
+  justify-content: space-around;
+}
+.relation_4 {
+  width: 580px;
+  height: 229px;
+  border-right: 1px solid #999;
+  margin-top: 10px;
+  margin-left: 29px;
+}
+.relation_4 > div {
+  width: 500px;
+  height: 45px;
+  line-height: 50px;
+  margin: 15px 0;
+  border-bottom: 1px solid #eeeeee;
+}
+.relation_4 > div p img {
+  vertical-align: middle;
+}
+.relation_4 > div p span {
+  padding-left: 20px;
+  font-size: 16px;
+  line-height: 28px;
+  color: #666;
+}
+.relation_5 {
+  width: 596px;
+  margin-top: 10px;
+  margin-left: 30px;
+}
+.relation_5 > div {
+  width: 500px;
+  height: 45px;
+  line-height: 50px;
+  margin: 15px 0;
+  border-bottom: 1px solid #eeeeee;
+}
+.relation_5 > div p img {
+  vertical-align: middle;
+}
+.relation_5 > div p span {
+  padding-left: 20px;
+  font-size: 16px;
+  line-height: 28px;
+  color: #666;
+}

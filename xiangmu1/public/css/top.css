@@ -1,0 +1,171 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+#top {
+  width: 100%;
+  height: 171px;
+  background: #fff;
+}
+#top_1 {
+  width: 1200px;
+  height: 111px;
+  background: #fff;
+  margin: 0 auto;
+  position: relative;
+}
+
+#top_1 > img:nth-child(1) {
+  position: absolute;
+  top: 30px;
+  width: 280px;
+  height: 50px;
+  color: #666;
+}
+#top_1 > img:nth-child(2) {
+  position: absolute;
+  bottom: 30px;
+  left: 300px;
+  width: 290px;
+  height: 50px;
+}
+#top_1 > .top1 {
+  width: 245px;
+  height: 87px;
+  position: absolute;
+  right: 0;
+  padding-top: 33px;
+  box-sizing: border-box;
+  margin-top: 10px;
+}
+.top2 {
+  position: absolute;
+  right: 2px;
+  bottom: 50px;
+  margin-bottom: -5px;
+  line-height: 20px;
+}
+.top2 > i {
+  font-style: normal;
+  font-size: 20px;
+  padding-left: 12px;
+  color: #666;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+.top2 > em {
+  background: url(../1/t1.jpg) no-repeat 0 0;
+  width: 62px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 12px;
+  color: #fff;
+  text-align: left;
+  padding-left: 34px;
+  font-style: normal;
+  float: left;
+}
+.top3 > i {
+  font-style: normal;
+  font-size: 20px;
+  padding-left: 10px;
+  color: #666;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.top3 > em {
+  width: 62px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 12px;
+  background: url(../1/t2.jpg) no-repeat 0 0;
+  color: #fff;
+  text-align: left;
+  font-style: normal;
+  padding-left: 30px;
+  float: left;
+}
+.top3 {
+  position: absolute;
+  right: 1px;
+  bottom: 15px;
+}
+#top_2 {
+  width: 100%;
+  height: 52px;
+  background: #2b2927;
+}
+#top_2 > .top_1 {
+  height: 52px;
+  margin: 0 auto;
+  position: relative;
+}
+.top_1 > .top_2 {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  list-style: none;
+}
+.top_1 > .top_2 li {
+  height: 52px;
+}
+.top_1 > .top_2 li a {
+  text-decoration: none;
+  display: block;
+  font: normal 14px "Microsoft YaHei";
+  color: #fff;
+  padding: 0 46px;
+  height: 52px;
+  line-height: 52px;
+}
+.active {
+  background-color: #ff9000;
+}
+.top_1 ul li a:hover {
+  background-color: #ff9000;
+}
+.top_1 > .in {
+  position: absolute;
+  top: 52px;
+  width: 1932px;
+  height: 52px;
+  text-align: right;
+  list-style: none;
+  opacity: 0.9;
+  z-index: 13;
+}
+.top_1 > .in > li {
+  display: none;
+  background-color: #2b2927;
+}
+.bk1 > a {
+  margin-right: 1450px !important;
+}
+.bk2 {
+  margin-right: 500px !important;
+}
+.bk3 {
+  margin-right: 500px;
+}
+.bk4 {
+  margin-right: 650px;
+}
+.bk5 {
+  margin-right: 450px;
+}
+/* .bk3 > a {
+  margin-left: 50px !important;
+} */
+.in li a {
+  text-decoration: none;
+  font-size: 14px;
+  display: inline-block;
+  padding: 0 15px 0 20px;
+  line-height: 45px;
+  height: 45px;
+  background: url(../1/jtt.png) no-repeat 0 center;
+  font-weight: normal;
+  color: #fff;
+  cursor: pointer;
+}

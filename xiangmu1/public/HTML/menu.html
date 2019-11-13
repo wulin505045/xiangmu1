@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>1. 实现伸缩二级菜单</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="css/1.css" />
+</head>
+<body>
+<ul class="tree">
+	<li>
+		<span class="open">考勤管理</span>
+		<ul>
+			<li>日常考勤</li>
+			<li>请假申请</li>
+			<li>加班/出差</li>
+		</ul>
+	</li>
+	<li>
+		<span>信息中心</span>
+		<ul>
+			<li>通知公告</li>
+			<li>公司新闻</li>
+			<li>规章制度</li>
+		</ul>
+	</li>
+	<li>
+		<span>协同办公</span>
+		<ul>
+			<li>公文流转</li>
+			<li>文件中心</li>
+			<li>内部邮件</li>
+			<li>即时通信</li>
+			<li>短信提醒</li>
+		</ul>
+	</li>
+</ul>
+<script>
+//DOM4步: 
+//1. 查找触发事件的元素
+//查找class为tree下的所有span元素
+var spans=document.querySelectorAll(
+	"ul.tree>li>span"
+);
+console.log(spans);
+//2. 绑定事件
+//遍历每个span
+for(var span of spans){
+//为每个span都绑定单击事件处理函数
+	span.onclick=function(){
+	//浏览器: 本次单击的span.onclick()
+		//          this->本次点击的span
+		//alert(`${this.innerHTML} 疼！`);
+		//3. 查找要修改的元素
+		//修改当前span
+		var span=this;
+		//4. 修改元素
+		//如果span现在是开着的
+		if(span.className=="open"){
+			//就关闭当前span
+			span.className="";
+			//   等效于class
+		}else{//否则
+			//先查找现在开着的span
+			var openSpan=//如果找不到，返回null
+				document.querySelector(
+					"ul.tree>li>span.open"
+				);
+			//如果找到openSpan
+			if(openSpan!=null){
+				//才关闭它
+				openSpan.className="";
+			}
+			//打开当前span
+			span.className="open";
+		}
+	}
+}
+//循环结束后: span->最后一个元素
+
+
+//之后当用户单击某个span时，才触发当前span上的onclick()
+</script>
+</body>
+</html>

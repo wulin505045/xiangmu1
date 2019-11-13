@@ -1,0 +1,119 @@
+
+    	$(function(){
+    		$(".t-nav ul li").each(function(){
+    			var dhej=$(this).find(".erjp a").size();
+    			if(dhej>0){
+    				$(this).hover(function(){
+    					$(this).find(".erjp").show();
+    					$(".erjsv").show();
+    				},function(){
+    					$(this).find(".erjp").hide();
+    					$(".erjsv").hide();
+    				})
+    			}
+    		})
+    	})
+    
+
+	 	$(".banner").slide({titCell:".hd ul",mainCell:".bdsy",autoPage:true,effect:"fold",autoPlay:true,vis:1});
+	 
+
+	function searchInfo() {
+	    var key = document.getElementById("key").value;
+            if (key) {
+                location.href = "/search.php?key=" + key;
+            } else {
+                alert('请输入搜索关键词');
+            }
+        }
+       $(function() {
+            $("#key").keydown(
+                function(e) {
+                    if (e.keyCode == 13) {
+                        searchInfo();
+                    }
+                });
+        });
+ 
+
+		$(function(){
+			$(".zl_div ul li").each(function(){
+				$(this).stop().hover(function(){
+					$(this).addClass("cur").siblings("li").removeClass("cur");
+				},function(){
+				})
+			})
+		})
+	
+
+		$(function(){
+			$(".zx_div").slide({titCell:".zx_btn .zxli",mainCell:".zx_lst",autoPage:false,effect:"fade",autoPlay:false,vis:1,targetCell:".zxmor"});
+		})
+	
+
+		$(function(){
+			$(".ry_nr").slide({titCell:null,mainCell:".ry_lst ul",autoPage:true,effect:"leftLoop",autoPlay:true,vis:6});
+		})
+	
+
+        $(function() {
+            var time;
+            //var winHeight = top.window.document.body.clientHeight || $(window.parent).height();
+            $('.client-2').css({
+                'marginTop': -($('.client-2').height() / 2)
+            });
+            $('#client-2 li').on({
+                'mouseenter': function() {
+                    var scope=this;
+                    time = setTimeout(function() {
+                        var divDom = $(scope).children('div');
+                        var maxWidth = divDom.width();
+                        $(scope).stop().animate({
+                            left: 77-maxWidth
+                        }, 'normal', function() {
+                            var pic = $(scope).find('.my-kefu-weixin-pic');
+                            if (pic.length > 0) {
+                                pic.show();
+                            }
+                        });
+                    }, 100)
+                },
+                'mouseleave': function() {
+                    var pic = $(this).find('.my-kefu-weixin-pic');
+                    var divDom = $(this).children('div');
+                    var maxWidth = divDom.width();
+                    if (pic.length > 0) {
+                        pic.hide();
+                    }
+                    clearTimeout(time);
+                    var divDom = $(this).children('div');
+                    $(this).stop().animate({
+                        left: 0
+                    }, "normal", function() {});
+                }
+            });
+            //返回顶部
+            $(window).scroll(function() {
+                var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+                var eltop = $("#client-2").find(".my-kefu-ftop");
+                if (scrollTop > 0) {
+                    eltop.show();
+                } else {
+                    eltop.hide();
+                }
+            });
+            $("#client-2").find(".my-kefu-ftop").click(function() {
+                var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+                if (scrollTop > 0) {
+                    $("html,body").animate({
+                        scrollTop: 0
+                    }, "slow");
+                }
+            });
+        });
+    
+
+     if (!(/msie [6|7|8|9]/i.test(navigator.userAgent))){
+		new WOW().init();
+	};
+ 
